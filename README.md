@@ -24,7 +24,7 @@
 
 <pre>
 
-                                 FILDS OF STUY
+                              FIELDS OF STUDY
 ┌──────────────────────────────────────────────────────────────────────────┐
 │ ├Computer_Engineering_2022-1_UEFS  │ # degree in Computer Engeneering    │
 │ │  ├─Eletronics                    │ # introduction in electronics and C │
