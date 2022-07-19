@@ -1,16 +1,15 @@
 
 <br>
-<img src="https://micaelmuniz.tech/glitch.gif" alt="this slowpoke moves"  width="500" />
+<img src="https://micaelmuniz.tech/glitch.gif"  width="500" />
 
 ## 🧐 About me:
-```bash
-🎓 I'm a Computer Engineering student, also a Computer Technician.
-🤖 I'm interested in the fields of Machine Learning, Data Science, Web Scraping, Bots, Digital Security.
-⚙️ I also develop based on hardware, Electronics, Engineering, Electric, Arduino... (yes, I try to run Doom on everything that has a screen).
-🌎 I admire projects involving engineering, the evolution of humanity, like Tesla, Space X, Neura Link, Metaverse...
-🦾 I WILL become a cyborg... Someday... (I mean it).
-🎨 I'm not much into front-end... But I love ASCII & Pixel art.
-```
+``🎓 I'm a Computer Engineering student, also a Computer Technician.`` <br>
+``🤖 I'm interested in the fields of Machine Learning, Data Science, Web Scraping, Bots, Digital Security.`` <Br>
+``⚙️ I also develop based on hardware, Electronics, Engineering, Electric, Arduino... (yes, I try to run Doom on everything that has a screen).`` <br>
+``🌎 I admire projects involving engineering and the evolution of humanity, like Tesla, Space X, Neura Link, Metaverse...``<Br>
+``🦾 I WILL become a cyborg... Someday... (I mean it).``<br>
+``🎨 I'm not much into front-end... But I love ASCII & Pixel art.``<Br>
+
 
 ## 📟 Find me on:
 
@@ -46,6 +45,9 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-plain-wordmark.svg" title="Lua" height="50"/>  &nbsp
 </div>   
+
+<Br>
+<img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="500" />
 
 ### 🏅 Stats 
 <div>
