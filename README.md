@@ -2,12 +2,17 @@
 <br>
 <img src="https://micaelmuniz.tech/glitch.gif" alt="this slowpoke moves"  width="500" />
 
-###  About
+## 🧐 About me:
 ```bash
-place holder
+🎓 I'm a Computer Engineering student, also a Computer Technician.
+🤖 I'm interested in the fields of Machine Learning, Data Science, Web Scraping, Bots, Digital Security.
+⚙️ I also develop based on hardware, Electronics, Engineering, Electric, Arduino... (yes, I try to run Doom on everything that has a screen).
+🌎 I admire projects involving engineering, the evolution of humanity, like Tesla, Space X, Neura Link, Metaverse...
+🦾 I WILL become a cyborg... Someday... (I mean it).
+🎨 I'm not much into front-end... But I love ASCII & Pixel art.
 ```
 
-### Contatos:
+## 📟 Find me on:
 
 <div>
 <a href="https://instagram.com/micaelmz" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a> &nbsp
@@ -16,7 +21,7 @@ place holder
 
 <br>
 
-### Ferramentas e Tecnologias
+## 🔧 I work with:
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="50"/> &nbsp
@@ -28,7 +33,7 @@ place holder
 
 <br>
 
-### Estou aprendendo
+## 🧮 I'm currently learning:
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="50"/>  &nbsp
@@ -42,6 +47,7 @@ place holder
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-plain-wordmark.svg" title="Lua" height="50"/>  &nbsp
 </div>   
 
+### 🏅 Stats 
 <div>
 <a href="https://github.com/micaelmz">
 <img height="100em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dracula"/>
