@@ -1,7 +1,11 @@
-## Micael Muniz
-### Estudante de Engenharia de Computação e Técnico em Informática
 
 <br>
+<img src="https://micaelmuniz.tech/glitch.gif" alt="this slowpoke moves"  width="500" />
+
+###  About
+```bash
+place holder
+```
 
 ### Contatos:
 
@@ -38,14 +42,10 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-plain-wordmark.svg" title="Lua" height="50"/>  &nbsp
 </div>   
 
-<br><br>
-
 <div>
 <a href="https://github.com/micaelmz">
-<img height="120em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dracula"/>  &nbsp
-<img height="120em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+<img height="100em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dracula"/>
+<img height="100em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
 </div>
 
- <br><br>
-          
 ![Snake animation](https://github.com/micaelmz/micaelmz/blob/output/github-contribution-grid-snake.svg)
