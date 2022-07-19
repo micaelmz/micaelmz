@@ -1,37 +1,47 @@
+## Micael Muniz
+### Estudante de Engenharia de Computação e Técnico em Informática
 
- <pre>                                            _______________________
-   _______________________-------------------                       `\
- /:--__                                                              |
-||&lt; &gt; |                                   ___________________________/
-| \__/_________________-------------------                         |
-|                                                                  |
- |                          𝙈𝙞𝙘𝙖𝙚𝙡 𝙈𝙪𝙣𝙞𝙯                           |
- |                  ᶜᵒᵐᵖᵘᵗᵉʳ ᵉⁿᵍⁱⁿᵉᵉʳⁱⁿᵍ ˢᵗᵘᵈᵉⁿᵗ                   |
- |                                                                  |
-  |    “𝕺𝖓𝖈𝖊 𝖚𝖕𝖔𝖓 𝖆 𝖙𝖎𝖒𝖊, 𝖆 𝕭𝖗𝖆𝖟𝖎𝖑𝖎𝖆𝖓 𝕮𝖔𝖒𝖕𝖚𝖙𝖊𝖗 𝕰𝖓𝖌𝖎𝖓𝖊𝖊𝖗𝖎𝖓𝖌 𝖘𝖙𝖚𝖉𝖊𝖓𝖙,    |
-  |    𝖋𝖗𝖔𝖒 𝖀𝕰𝕱𝕾 𝖈𝖔𝖑𝖑𝖊𝖌𝖊, 𝖉𝖎𝖘𝖈𝖔𝖛𝖊𝖗𝖊𝖉 𝖘𝖔𝖒𝖊 𝕶𝖎𝖓𝖉 𝖔𝖋 𝖕𝖔𝖜𝖊𝖗𝖘, 𝖙𝖍𝖊𝖘𝖊 𝖕𝖔𝖜𝖊𝖗𝖘  |
-  |   𝖊𝖒𝖆𝖓𝖆𝖙𝖊 𝖋𝖗𝖔𝖒 𝖆𝖓𝖈𝖎𝖊𝖓𝖙 𝖑𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘, 𝖈𝖆𝖑𝖑𝖊𝖉 𝖕𝖗𝖔𝖌𝖗𝖆𝖒𝖒𝖎𝖓𝖌 𝖑𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘      |
-  |    𝖇𝖞 𝖍𝖚𝖒𝖆𝖓𝖘, 𝖙𝖍𝖊𝖘𝖊 𝖑𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘 𝖜𝖊𝖗𝖊 𝖆𝖇𝖑𝖊 𝖙𝖔 𝖈𝖆𝖗𝖛𝖊 𝖌𝖔𝖔𝖉𝖘 𝖙𝖔 𝖘𝖔𝖑𝖛𝖊      |
-   |    𝖕𝖗𝖔𝖇𝖑𝖊𝖒𝖘 𝖜𝖍𝖊𝖓 𝖎𝖓𝖛𝖔𝖐𝖊𝖉, 𝖇𝖗𝖎𝖓𝖌𝖎𝖓𝖌 𝖌𝖗𝖆𝖙𝖎𝖋𝖎𝖈𝖆𝖙𝖎𝖔𝖓 𝖋𝖔𝖗 𝖙𝖍𝖔𝖘𝖊 𝖜𝖍𝖔       |
-   |       𝖍𝖆𝖛𝖊 𝖗𝖊𝖖𝖚𝖊𝖘𝖙𝖊𝖉 𝖍𝖎𝖒 𝖘𝖊𝖗𝖛𝖎𝖈𝖊𝖘 𝖆𝖓𝖉 𝕶𝖓𝖔𝖜𝖑𝖊𝖉𝖌𝖊.”                 |
-   |                                                                 |
-  |                                              ____________________|_
-  |  ___________________-------------------------                      `\
-  |/`--_                                                                 |
-  ||[ ]||                                            ___________________/
-   \===/___________________--------------------------</pre>
+<br>
 
+### Contatos:
 
-<pre>
+<div>
+<a href="https://instagram.com/micaelmz" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a> &nbsp
+<a href="https://br.linkedin.com/in/micaelmuniz" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
+</div>
 
-                              FIELDS OF STUDY
-┌──────────────────────────────────────────────────────────────────────────┐
-│ ├Computer_Engineering_2022-1_UEFS  │ # degree in Computer Engeneering    │
-│ │  ├─Eletronics                    │ # introduction in electronics and C │
-│ │  └─Python.py                     │ # learning Python and some libraries│
-│ └Computer_Technician_2019_CETEPS   │ # extension course in IT Technician │
-│    ├─Algorithms_and_Programming    │ # algorithms intro using Portugol   │
-│    └─CST_Certificacion             │ # Computer Service Technician (CST) │
-└──────────────────────────────────────────────────────────────────────────┘
+<br>
 
-</pre>
+### Ferramentas e Tecnologias
+<div>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" title="Pandas" height="50"/>  &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML 5" height="50"/>  &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="50"/>  &nbsp
+          
+</div>
+
+<br>
+
+### Estou aprendendo
+<div>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="50"/>  &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap 4" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original-wordmark.svg" title="Flask" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" title="SQLite" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" title="Arduino" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" height="50"/> &nbsp
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-plain-wordmark.svg" title="Lua" height="50"/>  &nbsp
+</div>   
+
+<div>
+<a href="https://github.com/micaelmz">
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dracula"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+</div>
+
+![Snake animation](https://github.com/micaelmz/micaelmz/blob/output/github-contribution-grid-snake.svg)
