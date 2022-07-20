@@ -2,7 +2,7 @@
 <br>
 <img src="https://micaelmuniz.tech/glitch.gif"  width="500" />
 
-## 🧐 About me:
+## 🧐 About me
 ``🎓 I'm a Computer Engineering student, also a Computer Technician.`` <br>
 ``🤖 I'm interested in the fields of Machine Learning, Data Science, Web Scraping, Bots, Digital Security.`` <Br>
 ``⚙️ I also develop based on hardware, Electronics, Engineering, Electric, Arduino... (yes, I try to run Doom on everything that has a screen).`` <br>
@@ -10,9 +10,9 @@
 ``🦾 I WILL become a cyborg... Someday... (I mean it).``<br>
 ``🎨 I'm not much into front-end... But I love ASCII & Pixel art.``<Br>
 
+<br>
 
-## 📟 Find me on:
-
+## 📟 Find me on
 <div>
 <a href="https://instagram.com/micaelmz" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a> &nbsp
 <a href="https://br.linkedin.com/in/micaelmuniz" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>   
@@ -20,19 +20,18 @@
 
 <br>
 
-## 🔧 I work with:
+## 🔧 I work with
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" title="Pandas" height="50"/>  &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML 5" height="50"/>  &nbsp
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="50"/>  &nbsp
-          
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="50"/>  &nbsp    
 </div>
 
 <br>
 
-## 🧮 I'm currently learning:
+## 🧮 I'm currently learning
 <div>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="50"/> &nbsp
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="50"/>  &nbsp
@@ -49,11 +48,17 @@
 <Br>
 <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="500" />
 
+<br>
+
 ### 🏅 Stats 
 <div>
 <a href="https://github.com/micaelmz">
-<img height="100em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dracula"/>
-<img height="100em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark"/>
+<br>
+<img height="192em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+<br>
+
+[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
 </div>
 
 ![Snake animation](https://github.com/micaelmz/micaelmz/blob/output/github-contribution-grid-snake.svg)
