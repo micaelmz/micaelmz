@@ -7,7 +7,7 @@
 ## 🧐 About me
 ``🎓 I'm a Computer Engineering student, also a Computer Technician.`` <br>
 ``🤖 I'm interested in the fields of Machine Learning, Data Science, Web Scraping, Bots, Digital Security, Transhumanism.`` <Br>
-``⚙️ I also develop based on hardware, Electronics, Engineering, Electric, Arduino... (yes, I try to run Doom on everything that has a screen).`` <br>
+``⚙️ I also develop based on hardware areas, as Electronics, Engineering, Electric, FPGA's, Arduino... (yes, I try to run Doom on everything that has a screen).`` <br>
 ``🌎 I admire projects involving engineering and the evolution of humanity, like Tesla, Space X, Neura Link, Metaverse...``<Br>
 ``🦾 I WILL become a cyborg... Someday... (I mean it).``<br>
 ``🎨 I'm not much into front-end... But I love ASCII & Pixel art.``<Br>
