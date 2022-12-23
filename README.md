@@ -1,6 +1,6 @@
 <br>
 <div align="center">
-    <img src="https://micaelmuniz.tech/glitch.gif"  width="75%"/>
+    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
 </div>
 
 
