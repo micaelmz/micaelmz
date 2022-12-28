@@ -34,8 +34,8 @@
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" title="PHP" height="50"/> &nbsp  
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="50"/>  &nbsp
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap 4" height="50"/> &nbsp
-          
-          
+    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/a19efa4467a513f7bff80eaa79023a11fa2a1e17/images/verilog.svg" title="Verilog HDL" height="50"/> &nbsp
+       
         
 </div>
 
