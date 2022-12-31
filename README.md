@@ -5,12 +5,12 @@
 
 
 ## 🧐 About me
-``🎓 I'm a Computer Engineering student, also a Computer Technician.`` <br>
-``🤖 I'm interested in the fields of Machine Learning, Data Science, Data Engineering (such as Web Scraping), Web & Mobile Development, AI, Augmented Reality, Automation, Digital Security, Transhumanism.`` <Br>
-``⚙️ I'm also developing based on Hardware & Electronic, as you expect from a Computer Engineer, such as, IC, FPGA's, Arduino... (yes, I try to run Doom on everything that has a screen). Also, hardware hacking is something that interest me a lot... (I'm accepting a Flipper, if you wanna gift me haha)`` <br>
-``🌎 I admire projects involving engineering and its contribuition to the evolution of humanity, from nowdays I can think in examples such as Tesla, Space X, Neura Link, Metaverse...``<Br>
-``🦾 I WILL become a cyborg... Someday... (I mean it).``<br>
-``🎨 I love ASCII & Pixel Art, I try to be good on front-end too...``<Br>
+``🎓 I'm a Computer Engineering student, also a Computer Technician`` <br>
+``🤖 I'm interested in the fields of Machine Learning, Data Science, Data Engineering (such as Web Scraping), Web & Mobile Development, AI, Augmented Reality, Automation, Digital Security``<br>
+``⚙️ In addition to my computer engineering skills, I have a strong background in hardware and electronics. I have experience working with ICs, FPGAs, Arduinos, and other hardware components. And yes... I try to run Doom on any device with a screen`` <br>
+``🌎 I am also passionate about projects involving engineering and its contribuition to the evolution of humanity, such as those of Tesla, Space X, Neura Link, Metaverse...``<br>
+``🦾 I like transhumanism and I WILL become a cyborg... Someday... (I mean it).``<br>
+``🎨 I love ASCII & Pixel Art, I try to be good on front-end too...``<br>
 
 <br>
 
