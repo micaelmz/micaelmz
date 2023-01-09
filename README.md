@@ -16,8 +16,18 @@
 
 ## 📟 Find me on
 <div>
-<a href="https://br.linkedin.com/in/micaelmuniz" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>  &nbsp
-<a href="https://instagram.com/micaelmz" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>   
+<a href="https://br.linkedin.com/in/micaelmuniz" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+    </a> &nbsp
+<a href="https://instagram.com/micaelmz" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank">
+    </a> &nbsp
+<a target="_blank" href="https://micaelmuniz.com">
+    <img src="https://img.shields.io/badge/-website-307cc5?style=for-the-badge&logo=google-chrome&logoColor=white&color=B700FF"/>
+</a> &nbsp
+<a target="_blank" href="https://micaelmuniz.com/resume.pdf">
+    <img src="https://img.shields.io/badge/Resume-c?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white&color=BD0807"/>
+</a>
 </div>
 
 <br>
