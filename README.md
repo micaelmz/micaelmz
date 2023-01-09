@@ -4,7 +4,7 @@
 </div>
 
 
-## 🧐 About me
+## 👁‍🗨 About me
 ``🎓 I'm a Computer Engineering student, also a Computer Technician`` <br>
 ``🤖 I'm interested in the fields of Machine Learning, Data Science, Data Engineering (such as Web Scraping), Web & Mobile Development, AI, Augmented Reality, Automation, Digital Security``<br>
 ``⚙️ In addition to my computer engineering skills, I have a strong background in hardware and electronics. I have experience working with ICs, FPGAs, Arduinos, and other hardware components. And yes... I try to run Doom on any device with a screen`` <br>
@@ -14,7 +14,7 @@
 
 <br>
 
-## 📟 Find me on
+## 🔍 Find me on
 <div>
 <a href="https://br.linkedin.com/in/micaelmuniz" target="_blank">
     <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
@@ -51,7 +51,7 @@
 
 <br>
 
-## 🧮 I'm currently learning
+## 📚 I'm currently learning
 <div>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="50"/> &nbsp
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium" height="50"/> &nbsp
@@ -71,7 +71,7 @@
 <br><br><br>
 
 <div align="center">
-  <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="50%" />
+  <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="49%" />
 </div>
 <br>
 
@@ -79,9 +79,9 @@
 
 ### 🏅 Stats 
 
-<img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark"/>
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark"/>
 <br>
-<img height="192em" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
 <br>
 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
