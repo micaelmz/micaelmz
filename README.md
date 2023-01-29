@@ -25,7 +25,7 @@
 <a target="_blank" href="https://micaelmuniz.com">
     <img src="https://img.shields.io/badge/-website-307cc5?style=for-the-badge&logo=google-chrome&logoColor=white&color=B700FF"/>
 </a> &nbsp
-<a target="_blank" href="https://micaelmuniz.com/resume.pdf">
+<a target="_blank" href="https://micaelmuniz.com/curriculo.pdf">
     <img src="https://img.shields.io/badge/Resume-c?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white&color=BD0807"/>
 </a>
 </div>
