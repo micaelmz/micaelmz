@@ -24,40 +24,42 @@
 
 <br>
 
+
 ### 🦾 Main skills
 <hr>
-<div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" title="Pandas" height="40"/>  &nbsp
-    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/flask.png" title="Flask" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="MySQL" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap 4" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML 5" height="40"/>  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="40"/>  &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" title="Flutter" height="40"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" title="JavaScript" height="40"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" title="PHP" height="40"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="40"/>  &nbsp
-    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/a19efa4467a513f7bff80eaa79023a11fa2a1e17/images/verilog.svg" title="Verilog HDL" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" height="40"/> &nbsp
-</div>
+
+![Python](https://img.shields.io/badge/-python-0B080C?style=for-the-badge&logo=python&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![NumPy](https://img.shields.io/badge/-numpy-0B080C?style=for-the-badge&logo=numpy&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Pandas](https://img.shields.io/badge/-pandas-0B080C?style=for-the-badge&logo=pandas&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Flask](https://img.shields.io/badge/-flask-0B080C?style=for-the-badge&logo=flask&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Selenium](https://img.shields.io/badge/-selenium-0B080C?style=for-the-badge&logo=selenium&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![MySQL](https://img.shields.io/badge/-mysql-0B080C?style=for-the-badge&logo=mysql&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![DB2](https://img.shields.io/badge/-IBM_DB2-0B080C?style=for-the-badge&logo=ibm&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Bootstrap](https://img.shields.io/badge/-bootstrap-0B080C?style=for-the-badge&logo=bootstrap&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![HTML5](https://img.shields.io/badge/-HTML5-0B080C?style=for-the-badge&logo=html5&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![CSS3](https://img.shields.io/badge/-css3-0B080C?style=for-the-badge&logo=css3&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Flutter](https://img.shields.io/badge/-flutter-0B080C?style=for-the-badge&logo=flutter&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![JavaScript](https://img.shields.io/badge/-JavaScript-0B080C?style=for-the-badge&logo=javascript&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![C](https://img.shields.io/badge/-C-0B080C?style=for-the-badge&logo=c&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
+![Git](https://img.shields.io/badge/-git-0B080C?style=for-the-badge&logo=git&logoColor=f6f7f8&labelColor=0B080C)&nbsp;
 
 <br>
 
 ### 📚 I'm currently learning
 <hr>
-<div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" title="AWS" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title="C++" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" title="Java" height="40" />  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" title="Kotlin" height="40"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" title="NodeJS" height="40"/>
-</div>   
-<br><br><br>
+
+![AWS](https://img.shields.io/badge/-aws-0B080C?style=for-the-badge&logo=amazon-aws&services&logoColor=f6f7f8&labelColor=0B080C)
+![Docker](https://img.shields.io/badge/-Docker-0B080C?style=for-the-badge&logo=docker&services&logoColor=f6f7f8&labelColor=0B080C)
+![Unity](https://img.shields.io/badge/-Unity-0B080C?style=for-the-badge&logo=unity&services&logoColor=f6f7f8&labelColor=0B080C)
+![C#](https://img.shields.io/badge/-C_Sharp-0B080C?style=for-the-badge&logo=csharp&services&logoColor=f6f7f8&labelColor=0B080C)
+![Django](https://img.shields.io/badge/-Django-0B080C?style=for-the-badge&logo=django&services&logoColor=f6f7f8&labelColor=0B080C)
+![Postgresql](https://img.shields.io/badge/-postgresql-0B080C?style=for-the-badge&logo=postgresql&services&logoColor=f6f7f8&labelColor=0B080C)
+![NodeJS](https://img.shields.io/badge/-node.js-0B080C?style=for-the-badge&logo=node.js&services&logoColor=f6f7f8&labelColor=0B080C)
+![R](https://img.shields.io/badge/-R-0B080C?style=for-the-badge&logo=r&services&logoColor=f6f7f8&labelColor=0B080C)
+
+
+
+<br><br>
 
 <div align="center">
   <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="40%" />
