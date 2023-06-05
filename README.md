@@ -1,9 +1,8 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=555555&height=120&section=header"/>
-
-<br>
 <div align="center">
     <img align="center" src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
 </div>
+<br>
 
 ### 👁‍🗨 About me
 ``🐍 Python Developer & 📊 Data Scientist``<br>
