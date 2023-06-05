@@ -1,10 +1,9 @@
 <br>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
+    <img align="center" src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
 </div>
 
-
-## 👁‍🗨 About me
+### 👁‍🗨 About me
 ``🐍 Python Developer & 📊 Data Scientist``<br>
 ``🎓 I'm a Computer Engineering student, also a Computer Technician`` <br>
 ``🤖 I'm interested in the fields of Machine Learning, Data Science, Data Engineering, Web & Mobile Development``<br>
@@ -17,72 +16,62 @@
 
 ## 🔍 Find me on
 <div>
-<a href="https://br.linkedin.com/in/micaelmuniz" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
-    </a> &nbsp
-<a href="https://instagram.com/micaelmz" target="_blank">
-    <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank">
-    </a> &nbsp
-<a target="_blank" href="https://micaelmuniz.com">
-    <img src="https://img.shields.io/badge/-website-307cc5?style=for-the-badge&logo=google-chrome&logoColor=white&color=B700FF"/>
-</a> &nbsp
-<a target="_blank" href="https://micaelmuniz.com/curriculo.pdf">
-    <img src="https://img.shields.io/badge/Resume-c?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white&color=BD0807"/>
-</a>
+<a href="https://www.linkedin.com/in/micaelmuniz" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0B080C?style=for-the-badge&logo=linkedin&logoColor=white"</a> &nbsp
+<a href="https://instagram.com/micaelmz" target="_blank"><img alt="Instgram" src="https://img.shields.io/badge/Instagram-0B080C?style=for-the-badge&logo=instagram&logoColor=white"</a> &nbsp
+<a target="_blank" href="https://micaelmuniz.com"><img alt="Website" src="https://img.shields.io/badge/-website-0B080C?style=for-the-badge&logo=google-chrome&logoColor=white"/></a> &nbsp
+<a target="_blank" href="https://micaelmuniz.com/curriculo.pdf"><img alt="Curriculo" src="https://img.shields.io/badge/Resume-0B080C?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white"/></a>
 </div>
 
 <br>
 
-## 🔧 I work with
+### 🦾 Main skills
+<hr>
 <div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" title="Pandas" height="50"/>  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML 5" height="50"/>  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="50"/>  &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" title="Flutter" height="50"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" title="JavaScript" height="50"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" title="PHP" height="50"/> &nbsp  
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="50"/>  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap 4" height="50"/> &nbsp
-    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/a19efa4467a513f7bff80eaa79023a11fa2a1e17/images/verilog.svg" title="Verilog HDL" height="50"/> &nbsp
-       
-        
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" title="Python" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" title="NumPy" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" title="Pandas" height="40"/>  &nbsp
+    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/flask.png" title="Flask" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="MySQL" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap 4" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML 5" height="40"/>  &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS 3" height="40"/>  &nbsp  
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" title="Flutter" height="40"/> &nbsp  
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" title="JavaScript" height="40"/> &nbsp  
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" title="PHP" height="40"/> &nbsp  
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" height="40"/>  &nbsp
+    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/a19efa4467a513f7bff80eaa79023a11fa2a1e17/images/verilog.svg" title="Verilog HDL" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" height="40"/> &nbsp
 </div>
 
 <br>
 
-## 📚 I'm currently learning
+### 📚 I'm currently learning
+<hr>
 <div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" title="Selenium" height="50"/> &nbsp
-    <img src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/flask.png" title="Flask" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" title="SQLite" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg" title="Arduino" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-plain-wordmark.svg" title="Lua" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title="C++" height="50"/> &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" title="Java" height="50" />  &nbsp
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" title="Kotlin" height="50"/> &nbsp
-          
-          
-          
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" title="AWS" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" title="Django" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title="PostgreSQL" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title="C++" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" title="Java" height="40" />  &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" title="Kotlin" height="40"/> &nbsp
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" title="NodeJS" height="40"/>
 </div>   
 <br><br><br>
 
 <div align="center">
-  <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="49%" />
+  <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="40%" />
 </div>
 <br>
 
 <div align="center">
+<hr>
+    
+### 🏅 Statics 
 
-### 🏅 Stats 
-
-<img max-width="75%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark"/>
+<img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark"/>
 <br>
-<img max-width="75%" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+<img width="400" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
 <br>
 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
