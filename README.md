@@ -1,4 +1,4 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=555555&height=120&section=header"/>
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=header"/>
 <div align="center">
     <img align="center" src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
 </div>
