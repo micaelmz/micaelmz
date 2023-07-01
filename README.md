@@ -5,13 +5,9 @@
 <br>
 
 ### 👁‍🗨 About me
-``🐍 Python Developer & 📊 Data Scientist``<br>
-``🎓 I'm a Computer Engineering student, also a Computer Technician`` <br>
-``🤖 I'm interested in the fields of Machine Learning, Data Science, Data Engineering, Web & Mobile Development``<br>
-``⚙️ In addition to my computer engineering skills, I have a strong background in hardware and electronics. I have experience working with ICs, FPGAs, Arduinos, and other hardware components. And yes... I try to run Doom on any device with a screen`` <br>
-``🌎 I'm passionate about projects involving engineering and its contribuition to the evolution of humanity, and I hope to make my own contribution in the future as well.``<br>
-``🦾 I like transhumanism and I WILL become a cyborg... Someday... (I mean it).``<br>
-``🎨 I love ASCII & Pixel Art, I try to be good on front-end too...``<br>
+``🐍 I love Python and Data 📊``<br>
+``🎓 Computer Engineering student, and a Computer Technician`` <br>
+``🤖 I'm interested in the fields of Artificial Intelligence, Data Science, Web & Mobile Development``<br>
 
 <br>
 
