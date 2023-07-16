@@ -76,7 +76,11 @@
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
 
 
-![Snake animation](https://github.com/micaelmz/micaelmz/blob/output/github-contribution-grid-snake.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
+  <img alt="github-snake" src="github-snake.svg" />
+</picture>
 </div>    
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
