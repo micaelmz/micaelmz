@@ -81,6 +81,7 @@
   <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
   <img alt="github-snake" src="github-snake.svg" />
 </picture>
+
 </div>    
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
