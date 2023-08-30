@@ -32,11 +32,13 @@
 ![Selenium](https://img.shields.io/badge/-selenium-000000?style=for-the-badge&logo=selenium&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![MySQL](https://img.shields.io/badge/-mysql-000000?style=for-the-badge&logo=mysql&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![DB2](https://img.shields.io/badge/-IBM_DB2-000000?style=for-the-badge&logo=ibm&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![PostgreSQL](https://img.shields.io/badge/-postgresql-000000?style=for-the-badge&logo=postgresql&services&logoColor=f6f7f8&labelColor=000000)
 ![Bootstrap](https://img.shields.io/badge/-bootstrap-000000?style=for-the-badge&logo=bootstrap&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![HTML5](https://img.shields.io/badge/-HTML5-000000?style=for-the-badge&logo=html5&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![CSS3](https://img.shields.io/badge/-css3-000000?style=for-the-badge&logo=css3&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Flutter](https://img.shields.io/badge/-flutter-000000?style=for-the-badge&logo=flutter&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![jQuery](https://img.shields.io/badge/-jQuery-000000?style=for-the-badge&logo=jquery&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![C](https://img.shields.io/badge/-C-000000?style=for-the-badge&logo=c&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Git](https://img.shields.io/badge/-git-000000?style=for-the-badge&logo=git&logoColor=f6f7f8&labelColor=000000)&nbsp;
 
@@ -45,12 +47,14 @@
 ### 📚 I'm currently learning
 <hr>
 
+![Java](https://img.shields.io/badge/java-000000?style=for-the-badge&logo=openjdk&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![JWT](https://img.shields.io/badge/-jwt-000000?style=for-the-badge&logo=json-web-tokens&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![Vue.js](https://img.shields.io/badge/-vue.js-000000?style=for-the-badge&logo=vue.js&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![AWS](https://img.shields.io/badge/-aws-000000?style=for-the-badge&logo=amazon-aws&services&logoColor=f6f7f8&labelColor=000000)
 ![Docker](https://img.shields.io/badge/-Docker-000000?style=for-the-badge&logo=docker&services&logoColor=f6f7f8&labelColor=000000)
 ![Unity](https://img.shields.io/badge/-Unity-000000?style=for-the-badge&logo=unity&services&logoColor=f6f7f8&labelColor=000000)
 ![C#](https://img.shields.io/badge/-C_Sharp-000000?style=for-the-badge&logo=csharp&services&logoColor=f6f7f8&labelColor=000000)
 ![Django](https://img.shields.io/badge/-Django-000000?style=for-the-badge&logo=django&services&logoColor=f6f7f8&labelColor=000000)
-![Postgresql](https://img.shields.io/badge/-postgresql-000000?style=for-the-badge&logo=postgresql&services&logoColor=f6f7f8&labelColor=000000)
 ![NodeJS](https://img.shields.io/badge/-node.js-000000?style=for-the-badge&logo=node.js&services&logoColor=f6f7f8&labelColor=000000)
 ![R](https://img.shields.io/badge/-R-000000?style=for-the-badge&logo=r&services&logoColor=f6f7f8&labelColor=000000)
 
