@@ -58,10 +58,11 @@
 <br>
 
 <hr>
-    
-### 🏅 Statics 
 
 <div align="center">
+
+### 🏅 Statics 
+
 <img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark" alt=""/>
 <br>
 <img width="400" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true" alt=""/>
@@ -76,6 +77,8 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake.svg">
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake.svg">
 </picture>
+
+<br>
 
 <details>
   <summary>Click here, very important</summary>
