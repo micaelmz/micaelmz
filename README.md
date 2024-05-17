@@ -61,12 +61,15 @@
     
 ### 🏅 Statics 
 
+<div align="center">
 <img width="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=micaelmz&layout=compact&langs_count=7&theme=dark" alt=""/>
 <br>
 <img width="400" src="https://github-readme-stats.vercel.app/api?username=micaelmz&show_icons=true&theme=dark&include_all_commits=true&count_private=true" alt=""/>
 <br>
 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
+
+</div>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake-dark.svg">
