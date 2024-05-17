@@ -5,7 +5,8 @@
 <br>
 
 ### 👁‍🗨 About me
-``🐍 I love Python and Data 📊``<br>
+
+``🐍 Python lover``<br>
 ``🎓 Computer Engineering student, and a Computer Technician`` <br>
 ``🤖 I'm interested in the fields of Artificial Intelligence, Data Science, Web & Mobile Development``<br>
 
@@ -26,49 +27,36 @@
 <hr>
 
 ![Python](https://img.shields.io/badge/-python-000000?style=for-the-badge&logo=python&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![NumPy](https://img.shields.io/badge/-numpy-000000?style=for-the-badge&logo=numpy&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![Pandas](https://img.shields.io/badge/-pandas-000000?style=for-the-badge&logo=pandas&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=f6f7f8&labelColor=000000)&nbsp;
+![Java](https://img.shields.io/badge/java-000000?style=for-the-badge&logo=openjdk&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![NodeJS](https://img.shields.io/badge/-node.js-000000?style=for-the-badge&logo=node.js&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Express](https://img.shields.io/badge/-express-000000?style=for-the-badge&logo=express&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![React](https://img.shields.io/badge/-react-000000?style=for-the-badge&logo=react&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Flask](https://img.shields.io/badge/-flask-000000?style=for-the-badge&logo=flask&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Selenium](https://img.shields.io/badge/-selenium-000000?style=for-the-badge&logo=selenium&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![MySQL](https://img.shields.io/badge/-mysql-000000?style=for-the-badge&logo=mysql&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![DB2](https://img.shields.io/badge/-IBM_DB2-000000?style=for-the-badge&logo=ibm&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![PostgreSQL](https://img.shields.io/badge/-postgresql-000000?style=for-the-badge&logo=postgresql&services&logoColor=f6f7f8&labelColor=000000)
 ![Bootstrap](https://img.shields.io/badge/-bootstrap-000000?style=for-the-badge&logo=bootstrap&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![HTML5](https://img.shields.io/badge/-HTML5-000000?style=for-the-badge&logo=html5&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![CSS3](https://img.shields.io/badge/-css3-000000?style=for-the-badge&logo=css3&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Flutter](https://img.shields.io/badge/-flutter-000000?style=for-the-badge&logo=flutter&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![jQuery](https://img.shields.io/badge/-jQuery-000000?style=for-the-badge&logo=jquery&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![C](https://img.shields.io/badge/-C-000000?style=for-the-badge&logo=c&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![Git](https://img.shields.io/badge/-git-000000?style=for-the-badge&logo=git&logoColor=f6f7f8&labelColor=000000)&nbsp;
 
 <br>
 
 ### 📚 I'm currently learning
 <hr>
 
-![Java](https://img.shields.io/badge/java-000000?style=for-the-badge&logo=openjdk&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![JWT](https://img.shields.io/badge/-jwt-000000?style=for-the-badge&logo=json-web-tokens&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![AWS](https://img.shields.io/badge/-aws-000000?style=for-the-badge&logo=amazon-aws&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Docker](https://img.shields.io/badge/-Docker-000000?style=for-the-badge&logo=docker&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Unity](https://img.shields.io/badge/-Unity-000000?style=for-the-badge&logo=unity&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![C#](https://img.shields.io/badge/-C_Sharp-000000?style=for-the-badge&logo=csharp&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 ![Django](https://img.shields.io/badge/-Django-000000?style=for-the-badge&logo=django&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
-![R](https://img.shields.io/badge/-R-000000?style=for-the-badge&logo=r&services&logoColor=f6f7f8&labelColor=000000)&nbsp;
 
-
-
-<br><br>
-
-<div align="center">
-  <img src="https://c.tenor.com/H15IIZOPbMwAAAAC/hackerman-mr.gif" width="40%" />
-</div>
 <br>
 
-<div align="center">
 <hr>
     
 ### 🏅 Statics 
@@ -80,14 +68,17 @@
 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=micaelmz&theme=dark&hide_border=true)](https://git.io/streak-stats)
 
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake.svg">
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/micaelmz/micaelmz/output/github-contribution-grid-snake.svg">
 </picture>
 
-</div>    
+<details>
+  <summary>Click here, very important</summary>
+    <br>
+    <img src="https://i.pinimg.com/originals/6c/90/28/6c90288d7e10d46d18895f17f420a92c.gif">
+</details>  
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
 
