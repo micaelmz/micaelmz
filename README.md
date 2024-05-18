@@ -83,7 +83,7 @@
 <details>
   <summary>Click here, very important</summary>
     <br>
-    <img src="https://i.pinimg.com/originals/6c/90/28/6c90288d7e10d46d18895f17f420a92c.gif">
+    <img src="https://gifdb.com/images/high/cute-cat-sticking-out-tongue-e75ork7gwzbp3n3u.gif">
 </details>  
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
