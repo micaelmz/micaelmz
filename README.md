@@ -87,3 +87,5 @@
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
  -->
+
+[LinkedIn](https://www.linkedin.com/in/micaelmuniz/)
