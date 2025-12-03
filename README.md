@@ -1,4 +1,4 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=header"/>
+<!-- <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=header"/>
 <div align="center">
     <img align="center" src="https://raw.githubusercontent.com/micaelmz/micaelmz/main/images/glitch.gif"  width="75%"/>
 </div>
@@ -15,7 +15,6 @@
 ## 🔍 Find me on
 <div>
 <a href="https://www.linkedin.com/in/micaelmuniz" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white"></a> &nbsp
-<a href="https://instagram.com/micaelmz" target="_blank"><img alt="Instgram" src="https://img.shields.io/badge/Instagram-000000?style=for-the-badge&logo=instagram&logoColor=white"></a> &nbsp
 <a target="_blank" href="https://micaelmuniz.com"><img alt="Website" src="https://img.shields.io/badge/-website-000000?style=for-the-badge&logo=google-chrome&logoColor=white"/></a> &nbsp
 <a target="_blank" href="https://micaelmuniz.com/curriculo.pdf"><img alt="Curriculo" src="https://img.shields.io/badge/Resume-000000?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white"/></a>
 </div>
@@ -87,4 +86,4 @@
 </details>  
     
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=333333&height=120&section=footer"/>
-
+ -->
