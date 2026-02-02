@@ -25,7 +25,8 @@
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'ngrok-skip-browser-warning': '69420'
             }
         });
         if (!res.ok) throw new Error('Erro ao buscar configuração');
