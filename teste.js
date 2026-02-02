@@ -31,9 +31,11 @@
             }
         });
         if (!res.ok) throw new Error('Erro ao buscar configuração');
-        popupConfig = await res.json();
+        const payload = await res.json();
 
-        if (!popupConfig || !popupConfig.is_active) {
+        // Busca primeiro popup ativo
+        popupConfig = payload.popups?.find(p => p.is_active);
+        if (!popupConfig) {
             console.log('[Praqt Popup] Nenhum popup ativo encontrado');
             return;
         }
