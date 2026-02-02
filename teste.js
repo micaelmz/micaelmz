@@ -17,8 +17,7 @@
 
     if (!STORE_ID) return;
 
-    //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
-    const API_BASE = 'https://9db44ea1106d.ngrok-free.app/local';
+    const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
 
     let popupConfig;
     try {
@@ -26,8 +25,7 @@
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'ngrok-skip-browser-warning': '69420'
+                'Accept': 'application/json'
             }
         });
         if (!res.ok) throw new Error('Erro ao buscar configuração');
@@ -310,7 +308,7 @@
                     document.querySelectorAll('form').forEach(function(form) {
                         form.addEventListener('submit', function(e) {
                             e.preventDefault();
-
+                            
                             var formData = new FormData(form);
                             var data = {};
                             formData.forEach(function(value, key) {
@@ -340,15 +338,21 @@
         },
 
         createIframeContent(templateHtml, popupUuid, storeId) {
+            // Remove o botão de fechar fake do HTML do popup (o parent já tem um)
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(templateHtml, 'text/html');
+            const closeBtn = doc.querySelector('.popup-close-btn');
+            if (closeBtn) {
+                closeBtn.remove();
+            }
+            let processedHtml = doc.documentElement.outerHTML;
+
             // Injeta campos hidden e o helper script no HTML do template
             const hiddenFields = `
                 <input type="hidden" name="popup_uuid" value="${popupUuid}" />
                 <input type="hidden" name="store_id" value="${storeId}" />
             `;
-
-            // Procura por um form existente ou wrapa o conteúdo em um form
-            let processedHtml = templateHtml;
-
+            
             if (templateHtml.includes('<form')) {
                 // Se já tem form, injeta os hidden fields dentro dele
                 processedHtml = templateHtml.replace(
@@ -473,19 +477,19 @@
             modal.id = 'praqt-popup-modal';
 
             const iframeContent = this.createIframeContent(template.content, uuid, STORE_ID);
-
-            // Determina dimensões do popup (pode vir do config ou usar defaults)
-            const width = settings.popup_width || 400;
-            const height = settings.popup_height || 500;
+            
+            // Dimensões responsivas baseadas no dispositivo (igual ao editor GrapeJS)
+            const isMobile = window.matchMedia('(max-width:767px)').matches;
+            const width = isMobile ? '90vw' : '60vw';
+            const height = '70vh';
 
             modal.innerHTML = `
                 <div id="praqt-popup-container">
                     <button id="praqt-popup-close" aria-label="Fechar">&times;</button>
-                    <iframe
+                    <iframe 
                         id="praqt-popup-iframe"
                         srcdoc="${this.escapeHtml(iframeContent)}"
-                        width="${width}"
-                        height="${height}"
+                        style="width: ${width}; height: ${height}; max-width: 90vw; max-height: 85vh;"
                         scrolling="no"
                     ></iframe>
                 </div>
@@ -525,13 +529,13 @@
                         // Envia para o backend
                         try {
                             const result = await this.submitForm(data, uuid);
-
+                            
                             // Marca como inscrito no localStorage
                             Utils.storage.setRaw(`popup_${uuid}_Subscribed`, 'true');
-
+                            
                             // Fecha o popup (futuramente: exibir tela de sucesso)
                             this.close();
-
+                            
                             console.log('[Praqt Popup] Formulário enviado com sucesso:', result);
                         } catch (e) {
                             Utils.showErrorModal(e.message || 'Erro ao processar seu cadastro. Tente novamente.');
