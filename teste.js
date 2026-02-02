@@ -17,7 +17,8 @@
 
     if (!STORE_ID) return;
 
-    const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
+    //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
+    const API_BASE = 'https://9db44ea1106d.ngrok-free.app/local';
 
     let popupConfig;
     try {
@@ -309,7 +310,7 @@
                     document.querySelectorAll('form').forEach(function(form) {
                         form.addEventListener('submit', function(e) {
                             e.preventDefault();
-                            
+
                             var formData = new FormData(form);
                             var data = {};
                             formData.forEach(function(value, key) {
@@ -353,7 +354,7 @@
                 <input type="hidden" name="popup_uuid" value="${popupUuid}" />
                 <input type="hidden" name="store_id" value="${storeId}" />
             `;
-            
+
             if (templateHtml.includes('<form')) {
                 // Se já tem form, injeta os hidden fields dentro dele
                 processedHtml = templateHtml.replace(
@@ -478,7 +479,7 @@
             modal.id = 'praqt-popup-modal';
 
             const iframeContent = this.createIframeContent(template.content, uuid, STORE_ID);
-            
+
             // Dimensões responsivas baseadas no dispositivo (igual ao editor GrapeJS)
             const isMobile = window.matchMedia('(max-width:767px)').matches;
             const width = isMobile ? '90vw' : '60vw';
@@ -487,7 +488,7 @@
             modal.innerHTML = `
                 <div id="praqt-popup-container">
                     <button id="praqt-popup-close" aria-label="Fechar">&times;</button>
-                    <iframe 
+                    <iframe
                         id="praqt-popup-iframe"
                         srcdoc="${this.escapeHtml(iframeContent)}"
                         style="width: ${width}; height: ${height}; max-width: 90vw; max-height: 85vh;"
@@ -530,13 +531,13 @@
                         // Envia para o backend
                         try {
                             const result = await this.submitForm(data, uuid);
-                            
+
                             // Marca como inscrito no localStorage
                             Utils.storage.setRaw(`popup_${uuid}_Subscribed`, 'true');
-                            
+
                             // Fecha o popup (futuramente: exibir tela de sucesso)
                             this.close();
-                            
+
                             console.log('[Praqt Popup] Formulário enviado com sucesso:', result);
                         } catch (e) {
                             Utils.showErrorModal(e.message || 'Erro ao processar seu cadastro. Tente novamente.');
