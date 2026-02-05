@@ -25,7 +25,7 @@
         const res = await fetch(`${API_BASE}/popups?storeId=${STORE_ID}`, {
             method: 'GET',
             headers: {
-                //'ngrok-skip-browser-warning': '69420',
+                'ngrok-skip-browser-warning': '69420',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
