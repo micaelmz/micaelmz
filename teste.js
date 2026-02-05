@@ -17,15 +17,15 @@
 
     if (!STORE_ID) return;
 
-    //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
-    const API_BASE = 'https://0dd3-138-186-27-20.ngrok-free.app/local';
+    const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
+    //const API_BASE = 'https://9db44ea1106d.ngrok-free.app/local';
 
     let popupConfig;
     try {
         const res = await fetch(`${API_BASE}/popups?storeId=${STORE_ID}`, {
             method: 'GET',
             headers: {
-                'ngrok-skip-browser-warning': '69420',
+                //'ngrok-skip-browser-warning': '69420',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
@@ -350,8 +350,8 @@
         },
 
         // Reordena os prêmios colocando o vencedor no índice 0
-        reorderPrizesWithWinner(prizes, winningRewardId) {
-            const winnerIndex = prizes.findIndex(p => p.reward_id === winningRewardId);
+        reorderPrizesWithWinner(prizes, winningPrizeId) {
+            const winnerIndex = prizes.findIndex(p => String(p.id) === String(winningPrizeId));
             if (winnerIndex === -1) return prizes;
 
             const reordered = [...prizes];
@@ -370,7 +370,7 @@
         },
 
         // Anima a roleta dentro do iframe
-        async animateRoulette(iframeDoc, prizes, winningRewardId, onComplete) {
+        async animateRoulette(iframeDoc, prizes, winningPrizeId, onComplete) {
             const wheelSvg = iframeDoc.querySelector('.roulette-wheel');
             const container = iframeDoc.querySelector('.roulette-container');
 
@@ -399,11 +399,14 @@
 
             // Retornar função para parar e finalizar a animação
             return {
-                stopAndFinalize: () => {
+                stopAndFinalize: (actualWinningPrizeId) => {
                     isSpinning = false;
 
+                    // Usar prize_id fornecido ou fallback para o passado na inicialização
+                    const prizeId = actualWinningPrizeId || winningPrizeId;
+
                     // Reordenar prêmios com o vencedor no índice 0
-                    const reorderedPrizes = this.reorderPrizesWithWinner(prizes, winningRewardId);
+                    const reorderedPrizes = this.reorderPrizesWithWinner(prizes, prizeId);
 
                     // Regenerar o SVG com a nova ordem (instantâneo, usuário não percebe pois está girando)
                     const newSvgHtml = this.generateWheelSVG(reorderedPrizes);
@@ -574,12 +577,6 @@
                                 formData.forEach(function(value, key) {
                                     data[key] = value;
                                 });
-
-                                // Enviar dados da roleta se existir
-                                var rouletteBlock = document.querySelector('[data-prizes]');
-                                if (rouletteBlock) {
-                                    data._roulette_prizes = rouletteBlock.getAttribute('data-prizes');
-                                }
 
                                 window.parent.postMessage({
                                     type: 'popup:submit',
@@ -833,14 +830,17 @@
                 return;
             }
 
-            // Extrair dados da roleta se existirem
+            // Extrair dados visuais da roleta do iframe (apenas id, label, color — sem dados sensíveis)
             let roulettePrizes = null;
-            if (formData._roulette_prizes) {
+            if (type === 'roulette') {
                 try {
-                    roulettePrizes = JSON.parse(formData._roulette_prizes);
-                    delete formData._roulette_prizes;
+                    const iframeDoc = this.getIframeDocument();
+                    const rouletteBlock = iframeDoc?.querySelector('[data-prizes]');
+                    if (rouletteBlock) {
+                        roulettePrizes = JSON.parse(rouletteBlock.getAttribute('data-prizes'));
+                    }
                 } catch (e) {
-                    console.warn('[Praqt Popup] Erro ao parsear prizes:', e);
+                    console.warn('[Praqt Popup] Erro ao ler prizes visuais:', e);
                 }
             }
 
@@ -855,7 +855,7 @@
                         const animationController = await RouletteEngine.animateRoulette(
                             iframeDoc,
                             roulettePrizes,
-                            null, // reward_id ainda não sabemos
+                            null, // prize_id ainda não sabemos
                             () => {} // callback vazio, vamos controlar manualmente
                         );
 
@@ -865,16 +865,10 @@
                         // Marcar como jogou
                         DisplayManager.markAsPlayed(`popup_${uuid}_`);
 
-                        // Parar animação e mostrar resultado
-                        if (animationController && result.reward_id) {
-                            // Reordenar prizes e parar no vencedor
-                            const reorderedPrizes = RouletteEngine.reorderPrizesWithWinner(
-                                roulettePrizes,
-                                result.reward_id
-                            );
-
-                            // Regenerar e animar para posição final
-                            animationController.stopAndFinalize();
+                        // Parar animação e mostrar resultado — usa prize_id do backend
+                        if (animationController && result.prize_id) {
+                            // stopAndFinalize já reordena e anima internamente
+                            animationController.stopAndFinalize(result.prize_id);
 
                             // Esperar animação terminar e mostrar resultado
                             setTimeout(() => {
