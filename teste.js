@@ -18,7 +18,7 @@
     if (!STORE_ID) return;
 
     //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
-    const API_BASE = 'https://a119-138-186-27-20.ngrok-free.app/local';
+    const API_BASE = 'https://9b91-138-186-27-20.ngrok-free.app/local';
 
     let popupConfig;
     try {
