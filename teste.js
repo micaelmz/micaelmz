@@ -6,41 +6,45 @@
     // ============================================================================
 
     let STORE_ID = null;
+    let PLATFORM = null;
 
-    if (window.Shopify && window.Shopify.shop) {
+    // NuvemShop detection (LS.store.id)
+    if (window.LS && window.LS.store && window.LS.store.id) {
+        STORE_ID = String(window.LS.store.id);
+        PLATFORM = 'nuvemshop';
+    }
+    // Shopify fallback
+    else if (window.Shopify && window.Shopify.shop) {
         STORE_ID = window.Shopify.shop.split('.')[0];
-        console.log('[Praqt Popup] Store ID:', STORE_ID);
-    } else {
-        console.warn('[Praqt Popup] Shopify object not found');
+        PLATFORM = 'shopify';
+    }
+
+    if (!STORE_ID) {
+        console.warn('[Praqt Popup] Store not identified');
         return;
     }
 
-    if (!STORE_ID) return;
+    console.log('[Praqt Popup] Store ID:', STORE_ID, '| Platform:', PLATFORM);
 
     //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
-    const API_BASE = 'https://a5dd-138-186-27-20.ngrok-free.app/local';
+    const API_BASE = ' https://a5dd-138-186-27-20.ngrok-free.app/local';
 
-    let popupConfig;
+    let activePopups;
     try {
         const res = await fetch(`${API_BASE}/popups?storeId=${STORE_ID}`, {
             method: 'GET',
-            headers: {
-                'ngrok-skip-browser-warning': '69420',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
+            headers: { 'ngrok-skip-browser-warning': '69420', 'Content-Type': 'application/json', 'Accept': 'application/json' }
         });
         if (!res.ok) throw new Error('Erro ao buscar configuração');
         const payload = await res.json();
 
-        // Busca primeiro popup ativo
-        popupConfig = payload.popups?.find(p => p.is_active);
-        if (!popupConfig) {
+        activePopups = (payload.popups || []).filter(p => p.is_active);
+        if (activePopups.length === 0) {
             console.log('[Praqt Popup] Nenhum popup ativo encontrado');
             return;
         }
     } catch (e) {
-        console.error('[Praqt Popup] Erro ao carregar popup:', e);
+        console.error('[Praqt Popup] Erro ao carregar popups:', e);
         return;
     }
 
@@ -56,14 +60,6 @@
             },
             setJSON(key, val) {
                 try { localStorage.setItem(key, JSON.stringify(val)); }
-                catch (_) {}
-            },
-            getRaw(key) {
-                try { return localStorage.getItem(key); }
-                catch (_) { return null; }
-            },
-            setRaw(key, val) {
-                try { localStorage.setItem(key, val); }
                 catch (_) {}
             }
         },
@@ -96,19 +92,13 @@
             cpf(cpf) {
                 cpf = cpf.replace(/\D/g, '');
                 if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
-
                 let sum = 0;
-                for (let i = 0; i < 9; i++) {
-                    sum += parseInt(cpf.charAt(i), 10) * (10 - i);
-                }
+                for (let i = 0; i < 9; i++) sum += parseInt(cpf.charAt(i), 10) * (10 - i);
                 let rev = 11 - (sum % 11);
                 if (rev >= 10) rev = 0;
                 if (rev !== parseInt(cpf.charAt(9), 10)) return false;
-
                 sum = 0;
-                for (let i = 0; i < 10; i++) {
-                    sum += parseInt(cpf.charAt(i), 10) * (11 - i);
-                }
+                for (let i = 0; i < 10; i++) sum += parseInt(cpf.charAt(i), 10) * (11 - i);
                 rev = 11 - (sum % 11);
                 if (rev >= 10) rev = 0;
                 return rev === parseInt(cpf.charAt(10), 10);
@@ -116,24 +106,15 @@
         },
 
         showErrorModal(msg) {
-            document.querySelectorAll('[id$="-modal"]').forEach(el => el.remove());
-
+            document.querySelectorAll('[id$="-error-modal"]').forEach(el => el.remove());
             const m = document.createElement('div');
             m.id = 'popup-error-modal';
-            m.style.cssText = `
-                position:fixed;top:0;left:0;width:100vw;height:100vh;
-                display:flex;align-items:center;justify-content:center;
-                background:rgba(0,0,0,0.6);z-index:10002;
-            `;
+            m.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:10002;';
             m.innerHTML = `
-                <div style="background:#fff;padding:20px;border-radius:8px;max-width:300px;
-                    text-align:center;font-family:system-ui,sans-serif;">
+                <div style="background:#fff;padding:20px;border-radius:8px;max-width:300px;text-align:center;font-family:system-ui,sans-serif;">
                     <h2 style="margin-bottom:12px;">🚫 Ops!</h2>
                     <p style="margin-bottom:20px;">${msg}</p>
-                    <button id="close-error" style="padding:8px 16px;border:none;
-                        background:#ff6b6b;color:#fff;border-radius:4px;cursor:pointer;">
-                        Fechar
-                    </button>
+                    <button id="close-error" style="padding:8px 16px;border:none;background:#ff6b6b;color:#fff;border-radius:4px;cursor:pointer;">Fechar</button>
                 </div>
             `;
             document.body.appendChild(m);
@@ -142,21 +123,7 @@
 
         showToast(msg, type = 'success') {
             const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 12px 24px;
-                background: ${type === 'success' ? '#10b981' : '#ef4444'};
-                color: white;
-                border-radius: 8px;
-                font-family: system-ui, sans-serif;
-                font-size: 14px;
-                z-index: 10003;
-                animation: praqtToastIn 0.3s ease-out;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            `;
+            toast.style.cssText = `position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 24px;background:${type === 'success' ? '#10b981' : '#ef4444'};color:white;border-radius:8px;font-family:system-ui,sans-serif;font-size:14px;z-index:10003;box-shadow:0 4px 12px rgba(0,0,0,0.2);animation:praqtToastIn 0.3s ease-out;`;
             toast.textContent = msg;
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
@@ -164,11 +131,9 @@
 
         copyToClipboard(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(() => {
-                    Utils.showToast('Cupom copiado!');
-                }).catch(() => {
-                    Utils.fallbackCopy(text);
-                });
+                navigator.clipboard.writeText(text)
+                    .then(() => Utils.showToast('Cupom copiado!'))
+                    .catch(() => Utils.fallbackCopy(text));
             } else {
                 Utils.fallbackCopy(text);
             }
@@ -177,8 +142,7 @@
         fallbackCopy(text) {
             const textarea = document.createElement('textarea');
             textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
+            textarea.style.cssText = 'position:fixed;opacity:0';
             document.body.appendChild(textarea);
             textarea.select();
             try {
@@ -188,22 +152,109 @@
                 Utils.showToast('Erro ao copiar', 'error');
             }
             document.body.removeChild(textarea);
+        },
+
+        isCustomerLoggedIn() {
+            if (PLATFORM === 'shopify') {
+                return !!window.ShopifyAnalytics?.meta?.page?.customerId;
+            }
+            if (PLATFORM === 'nuvemshop') {
+                return !!(window.LS?.customer?.id);
+            }
+            return false;
+        },
+
+        escapeHtml(html) {
+            return html
+                .replace(/&/g, '&amp;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
         }
     };
+
+    // ============================================================================
+    // ESTILOS GLOBAIS (injetados uma vez)
+    // ============================================================================
+
+    function injectGlobalStyles() {
+        if (document.getElementById('praqt-popup-global-styles')) return;
+        const style = document.createElement('style');
+        style.id = 'praqt-popup-global-styles';
+        style.innerHTML = `
+            @keyframes praqtFadeIn { from { opacity: 0; } to { opacity: 1; } }
+            @keyframes praqtPopIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+            @keyframes praqtToastIn { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+        `;
+        document.head.appendChild(style);
+    }
 
     // ============================================================================
     // GERENCIADOR DE EXIBIÇÃO
     // ============================================================================
 
     const DisplayManager = {
-        shouldShow(storagePrefix, settings, popupType) {
-            const { allow_same_customer } = settings;
+        // Per-popup localStorage tracking
+        getPopupData(uuid) {
+            return Utils.storage.getJSON(`praqt_popup_${uuid}`) || {
+                views: 0,
+                subscribed: false,
+                lastSeen: null
+            };
+        },
 
-            // Se não permite o mesmo cliente jogar novamente
-            if (allow_same_customer === false) {
-                const hasPlayed = Utils.storage.getRaw(`${storagePrefix}Played`) === 'true';
-                if (hasPlayed) {
-                    console.log('[Praqt Popup] Usuário já participou deste popup');
+        savePopupData(uuid, data) {
+            Utils.storage.setJSON(`praqt_popup_${uuid}`, data);
+        },
+
+        incrementViews(uuid) {
+            const data = this.getPopupData(uuid);
+            data.views += 1;
+            data.lastSeen = Date.now();
+            this.savePopupData(uuid, data);
+        },
+
+        markSubscribed(uuid) {
+            const data = this.getPopupData(uuid);
+            data.subscribed = true;
+            this.savePopupData(uuid, data);
+        },
+
+        shouldShow(uuid, settings) {
+            const data = this.getPopupData(uuid);
+
+            const {
+                allow_same_customer,
+                stop_condition,
+                stop_on_subscribe,
+                use_max_views,
+                max_views,
+                require_logged_in
+            } = settings;
+
+            // Requer login — verificar se há cliente logado
+            if (require_logged_in === true && !Utils.isCustomerLoggedIn()) {
+                console.log(`[Praqt Popup ${uuid.slice(0, 8)}] Requires login — skipping`);
+                return false;
+            }
+
+            // Usuário já se inscreveu — verificar regras de bloqueio
+            if (data.subscribed) {
+                if (allow_same_customer === false) {
+                    console.log(`[Praqt Popup ${uuid.slice(0, 8)}] User already participated`);
+                    return false;
+                }
+                if (stop_condition === 'conditional' && stop_on_subscribe) {
+                    console.log(`[Praqt Popup ${uuid.slice(0, 8)}] Stopped: user subscribed`);
+                    return false;
+                }
+            }
+
+            // Limite de visualizações
+            if (stop_condition === 'conditional' && use_max_views && max_views) {
+                if (data.views >= parseInt(max_views, 10)) {
+                    console.log(`[Praqt Popup ${uuid.slice(0, 8)}] Max views reached (${data.views}/${max_views})`);
                     return false;
                 }
             }
@@ -211,73 +262,127 @@
             return true;
         },
 
-        markAsPlayed(storagePrefix) {
-            Utils.storage.setRaw(`${storagePrefix}Played`, 'true');
-        },
-
         setupTriggers(settings, openCallback) {
-            const { display_condition, delay_seconds } = settings;
+            const { display_condition, use_delay, delay_seconds, show_on_exit } = settings;
 
-            const exitHandler = e => {
-                if (e.clientY < 10) openCallback();
+            let opened = false;
+            const safeOpen = () => {
+                if (opened) return;
+                opened = true;
+                openCallback();
             };
 
-            switch (display_condition) {
-                case 'immediately':
-                case 'on_entry':
-                    openCallback();
-                    break;
-                case 'on_exit':
-                    document.addEventListener('mouseout', exitHandler, { once: true });
-                    break;
-                case 'after_delay':
-                    const delay = delay_seconds || 5;
-                    setTimeout(openCallback, delay * 1000);
-                    break;
-                case 'on_scroll':
-                    const scrollHandler = () => {
-                        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-                        if (scrollPercent >= 50) {
-                            window.removeEventListener('scroll', scrollHandler);
-                            openCallback();
-                        }
-                    };
-                    window.addEventListener('scroll', scrollHandler);
-                    break;
-                default:
-                    openCallback();
+            // Trigger primário
+            if (display_condition === 'immediately' || display_condition === 'on_entry' || !display_condition) {
+                if (use_delay && delay_seconds > 0) {
+                    setTimeout(safeOpen, delay_seconds * 1000);
+                } else {
+                    safeOpen();
+                }
+            } else {
+                switch (display_condition) {
+                    case 'on_exit': {
+                        const handler = e => {
+                            if (e.clientY < 10) {
+                                document.removeEventListener('mouseout', handler);
+                                safeOpen();
+                            }
+                        };
+                        document.addEventListener('mouseout', handler);
+                        break;
+                    }
+                    case 'after_delay': {
+                        const delay = parseInt(delay_seconds, 10) || 5;
+                        setTimeout(safeOpen, delay * 1000);
+                        break;
+                    }
+                    case 'on_scroll': {
+                        const scrollHandler = () => {
+                            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                            if (scrollPercent >= 50) {
+                                window.removeEventListener('scroll', scrollHandler);
+                                safeOpen();
+                            }
+                        };
+                        window.addEventListener('scroll', scrollHandler);
+                        break;
+                    }
+                    default:
+                        safeOpen();
+                }
+            }
+
+            // Trigger secundário: exit-intent adicional (se configurado e não é o trigger primário)
+            if (show_on_exit && display_condition !== 'on_exit') {
+                const exitHandler = e => {
+                    if (e.clientY < 10) {
+                        document.removeEventListener('mouseout', exitHandler);
+                        safeOpen();
+                    }
+                };
+                document.addEventListener('mouseout', exitHandler);
             }
         },
 
         checkDeviceVisibility(settings) {
-            const { show_on_desktop, show_on_mobile } = settings;
-            const isMobile = window.matchMedia('(max-width:767px)').matches;
-            const isDesktop = !isMobile;
+            const { show_on_desktop, show_on_mobile, show_on_tablet } = settings;
+            const width = window.innerWidth;
 
-            if (isDesktop && show_on_desktop === false) {
-                return false;
-            }
-            if (isMobile && show_on_mobile === false) {
-                return false;
-            }
+            const isMobile = width <= 767;
+            const isTablet = width >= 768 && width <= 1024;
+            const isDesktop = width > 1024;
+
+            if (isDesktop && show_on_desktop === false) return false;
+            if (isTablet && show_on_tablet === false) return false;
+            if (isMobile && show_on_mobile === false) return false;
 
             return true;
         },
 
         getPopupDimensions(settings) {
-            const { orientation } = settings;
-            const isMobile = window.matchMedia('(max-width:767px)').matches;
+            const { orientation, size } = settings;
+            const isMobile = window.innerWidth <= 767;
 
-            if (orientation === 'portrait') {
-                return isMobile
-                    ? { width: '85vw', height: '85vh' }
-                    : { width: '40vw', height: '90vh' };
+            if (isMobile) {
+                return orientation === 'portrait'
+                    ? { width: '90vw', height: '85vh' }
+                    : { width: '95vw', height: '70vh' };
             }
 
-            // landscape (padrão)
-            return isMobile
-                ? { width: '90vw', height: '70vh' }
-                : { width: '60vw', height: '70vh' };
+            // Desktop/tablet: matrix de orientação × tamanho
+            const dimensionMap = {
+                portrait: {
+                    small:  { width: '360px', height: '500px' },
+                    medium: { width: '450px', height: '600px' },
+                    large:  { width: '550px', height: '700px' },
+                },
+                landscape: {
+                    small:  { width: '500px', height: '380px' },
+                    medium: { width: '700px', height: '480px' },
+                    large:  { width: '900px', height: '560px' },
+                }
+            };
+
+            const orient = orientation === 'portrait' ? 'portrait' : 'landscape';
+            const sz = ['small', 'medium', 'large'].includes(size) ? size : 'medium';
+
+            return dimensionMap[orient][sz];
+        },
+
+        getPositionStyles(position) {
+            const map = {
+                'top-left':      { alignItems: 'flex-start', justifyContent: 'flex-start', padding: '20px' },
+                'top-center':    { alignItems: 'flex-start', justifyContent: 'center',     padding: '20px 0' },
+                'top-right':     { alignItems: 'flex-start', justifyContent: 'flex-end',   padding: '20px' },
+                'center-left':   { alignItems: 'center',     justifyContent: 'flex-start', padding: '0 20px' },
+                'center-center': { alignItems: 'center',     justifyContent: 'center',     padding: '0' },
+                'center-right':  { alignItems: 'center',     justifyContent: 'flex-end',   padding: '0 20px' },
+                'bottom-left':   { alignItems: 'flex-end',   justifyContent: 'flex-start', padding: '20px' },
+                'bottom-center': { alignItems: 'flex-end',   justifyContent: 'center',     padding: '20px 0' },
+                'bottom-right':  { alignItems: 'flex-end',   justifyContent: 'flex-end',   padding: '20px' },
+            };
+
+            return map[position] || map['center-center'];
         }
     };
 
@@ -286,7 +391,6 @@
     // ============================================================================
 
     const RouletteEngine = {
-        // Gera o conteúdo SVG da roleta com base nos prêmios
         generateWheelSVG(prizes, size = 220) {
             if (!prizes || prizes.length === 0) return '';
 
@@ -303,13 +407,13 @@
             const describeArc = (x, y, radius, startAngle, endAngle) => {
                 const start = polarToCartesian(x, y, radius, endAngle);
                 const end = polarToCartesian(x, y, radius, startAngle);
-                const largeArcFlag = endAngle - startAngle <= Math.PI ? "0" : "1";
+                const largeArcFlag = endAngle - startAngle <= Math.PI ? '0' : '1';
                 return [
-                    "M", x, y,
-                    "L", start.x.toFixed(2), start.y.toFixed(2),
-                    "A", radius, radius, 0, largeArcFlag, 0, end.x.toFixed(2), end.y.toFixed(2),
-                    "Z"
-                ].join(" ");
+                    'M', x, y,
+                    'L', start.x.toFixed(2), start.y.toFixed(2),
+                    'A', radius, radius, 0, largeArcFlag, 0, end.x.toFixed(2), end.y.toFixed(2),
+                    'Z'
+                ].join(' ');
             };
 
             const getContrastColor = (hexColor) => {
@@ -349,7 +453,6 @@
             return `<svg class="roulette-wheel" width="${size}" height="${size}" viewBox="0 0 220 220" style="max-width: 100%; transition: none;">${svgContent}</svg>`;
         },
 
-        // Reordena os prêmios colocando o vencedor no índice 0
         reorderPrizesWithWinner(prizes, winningPrizeId) {
             const winnerIndex = prizes.findIndex(p => String(p.id) === String(winningPrizeId));
             if (winnerIndex === -1) return prizes;
@@ -360,16 +463,12 @@
             return reordered;
         },
 
-        // Calcula a rotação final para parar no índice 0 (topo)
         calculateFinalRotation(prizeCount, extraSpins = 5) {
-            // O índice 0 começa em 0° (3 o'clock), pointer está no topo (270°)
-            // Para o índice 0 ficar no topo: rotação = 270 - (0 * sliceAngle + sliceAngle/2)
             const sliceAngle = 360 / prizeCount;
             const targetRotation = 270 - (sliceAngle / 2);
             return targetRotation + (360 * extraSpins);
         },
 
-        // Anima a roleta dentro do iframe
         async animateRoulette(iframeDoc, prizes, winningPrizeId, onComplete) {
             const wheelSvg = iframeDoc.querySelector('.roulette-wheel');
             const container = iframeDoc.querySelector('.roulette-container');
@@ -380,13 +479,12 @@
                 return;
             }
 
-            // Fase 1: Começar a girar rápido (infinito até o backend responder)
             wheelSvg.style.transition = 'none';
             wheelSvg.style.transformOrigin = 'center center';
 
             let currentRotation = 0;
             let isSpinning = true;
-            const spinSpeed = 20; // graus por frame
+            const spinSpeed = 20;
 
             const spinLoop = () => {
                 if (!isSpinning) return;
@@ -397,25 +495,16 @@
 
             spinLoop();
 
-            // Retornar função para parar e finalizar a animação
             return {
                 stopAndFinalize: (actualWinningPrizeId) => {
                     isSpinning = false;
 
-                    // Usar prize_id fornecido ou fallback para o passado na inicialização
                     const prizeId = actualWinningPrizeId || winningPrizeId;
-
-                    // Reordenar prêmios com o vencedor no índice 0
-                    const reorderedPrizes = this.reorderPrizesWithWinner(prizes, prizeId);
-
-                    // Regenerar o SVG com a nova ordem (instantâneo, usuário não percebe pois está girando)
-                    const newSvgHtml = this.generateWheelSVG(reorderedPrizes);
-
-                    // Calcular rotação atual normalizada e a final
+                    const reorderedPrizes = RouletteEngine.reorderPrizesWithWinner(prizes, prizeId);
+                    const newSvgHtml = RouletteEngine.generateWheelSVG(reorderedPrizes);
                     const normalizedRotation = currentRotation % 360;
-                    const finalRotation = this.calculateFinalRotation(reorderedPrizes.length, 3);
+                    const finalRotation = RouletteEngine.calculateFinalRotation(reorderedPrizes.length, 3);
 
-                    // Substituir SVG mantendo a rotação atual
                     container.innerHTML = `
                         <div class="roulette-pointer" style="width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #6366f1; margin-bottom: -8px; z-index: 10; position: relative;"></div>
                         ${newSvgHtml}
@@ -423,20 +512,17 @@
 
                     const newWheel = container.querySelector('.roulette-wheel');
                     if (newWheel) {
-                        // Aplicar rotação atual imediatamente
                         newWheel.style.transform = `rotate(${normalizedRotation}deg)`;
                         newWheel.style.transformOrigin = 'center center';
 
                         // Forçar reflow
                         newWheel.offsetHeight;
 
-                        // Animar até a posição final (2 segundos de desaceleração)
                         setTimeout(() => {
                             newWheel.style.transition = 'transform 2s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
                             newWheel.style.transform = `rotate(${normalizedRotation + finalRotation}deg)`;
                         }, 50);
 
-                        // Chamar callback após animação terminar
                         setTimeout(() => {
                             onComplete();
                         }, 2100);
@@ -449,62 +535,76 @@
     };
 
     // ============================================================================
-    // POPUP RENDERER (IFRAME-BASED)
+    // POPUP INSTANCE — cada popup ativo tem sua própria instância
     // ============================================================================
 
-    const PopupRenderer = {
-        modal: null,
-        messageHandler: null,
-        currentConfig: null,
-        currentCouponCode: null,
-        rouletteAnimation: null,
+    class PopupInstance {
+        constructor(config) {
+            this.config = config;
+            this.uuid = config.uuid;
+            this.type = config.type;
+            this.settings = config.config || {};
+            this.content = config.content;
+            this.successContent = config.success_content;
+            this.failContent = config.fail_content;
 
-        injectStyles(backgroundColor) {
-            const existing = document.getElementById('praqt-popup-styles');
-            if (existing) existing.remove();
+            this.modal = null;
+            this.messageHandler = null;
+            this.currentCouponCode = null;
+            this.rouletteAnimation = null;
+        }
+
+        // IDs únicos por popup para evitar conflito entre múltiplos popups abertos
+        getModalId() { return `praqt-popup-modal-${this.uuid}`; }
+        getContainerId() { return `praqt-popup-container-${this.uuid}`; }
+        getIframeId() { return `praqt-popup-iframe-${this.uuid}`; }
+        getCloseId() { return `praqt-popup-close-${this.uuid}`; }
+
+        injectStyles() {
+            const id = `praqt-popup-styles-${this.uuid}`;
+            if (document.getElementById(id)) return;
+
+            const posStyles = DisplayManager.getPositionStyles(this.settings.position);
+            const showClose = this.settings.show_close_button !== false;
+            const bgColor = this.settings.background_color || '#fff';
+            const modalId = this.getModalId();
+            const containerId = this.getContainerId();
+            const iframeId = this.getIframeId();
+            const closeId = this.getCloseId();
 
             const style = document.createElement('style');
-            style.id = 'praqt-popup-styles';
+            style.id = id;
             style.innerHTML = `
-                #praqt-popup-modal {
+                #${CSS.escape(modalId)} {
                     position: fixed;
                     top: 0;
                     left: 0;
                     width: 100vw;
                     height: 100vh;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    align-items: ${posStyles.alignItems};
+                    justify-content: ${posStyles.justifyContent};
+                    padding: ${posStyles.padding};
                     z-index: 9999;
-                    background: ${backgroundColor || 'rgba(0, 0, 0, 0.5)'};
+                    background: rgba(0, 0, 0, 0.5);
                     backdrop-filter: blur(3px);
                     animation: praqtFadeIn 0.3s ease-out;
+                    box-sizing: border-box;
                 }
-                @keyframes praqtFadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
-                @keyframes praqtToastIn {
-                    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-                    to { opacity: 1; transform: translateX(-50%) translateY(0); }
-                }
-                #praqt-popup-container {
+                #${CSS.escape(containerId)} {
                     position: relative;
                     max-width: 90vw;
                     max-height: 90vh;
                     animation: praqtPopIn 0.4s ease-out;
                 }
-                @keyframes praqtPopIn {
-                    from { transform: scale(0.8); opacity: 0; }
-                    to { transform: scale(1); opacity: 1; }
-                }
-                #praqt-popup-iframe {
+                #${CSS.escape(iframeId)} {
                     border: none;
                     border-radius: 12px;
                     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-                    background: #fff;
+                    background: ${bgColor};
                 }
-                #praqt-popup-close {
+                ${showClose ? `
+                #${CSS.escape(closeId)} {
                     position: absolute;
                     top: -12px;
                     right: -12px;
@@ -523,19 +623,23 @@
                     transition: all 0.2s;
                     z-index: 10;
                 }
-                #praqt-popup-close:hover {
+                #${CSS.escape(closeId)}:hover {
                     background: #f5f5f5;
                     transform: scale(1.1);
-                }
+                }` : ''}
             `;
             document.head.appendChild(style);
-        },
+        }
 
-        getIframeHelperScript(popupType) {
+        getIframeHelperScript() {
+            const popupType = this.type;
+            const popupUuid = this.uuid;
+
             return `
                 <script>
                 (function() {
                     var popupType = '${popupType}';
+                    var popupUuid = '${popupUuid}';
 
                     var masks = {
                         cpf: function(v) {
@@ -566,7 +670,7 @@
                         });
                     });
 
-                    // Formulário só para tipos que precisam (default, roulette)
+                    // Formulário — interceptar submit apenas para tipos non-announcement
                     if (popupType !== 'announcement') {
                         document.querySelectorAll('form').forEach(function(form) {
                             form.addEventListener('submit', function(e) {
@@ -580,21 +684,25 @@
 
                                 window.parent.postMessage({
                                     type: 'popup:submit',
+                                    popupUuid: popupUuid,
                                     data: data
                                 }, '*');
                             });
                         });
                     }
 
-                    // Botão de fechar
+                    // Botões de fechar dentro do popup (fail screen, etc.)
                     document.querySelectorAll('.close-popup-button, [data-close-popup]').forEach(function(el) {
                         el.addEventListener('click', function(e) {
                             e.preventDefault();
-                            window.parent.postMessage({ type: 'popup:close' }, '*');
+                            window.parent.postMessage({
+                                type: 'popup:close',
+                                popupUuid: popupUuid
+                            }, '*');
                         });
                     });
 
-                    // Cupom clicável
+                    // Cupom clicável (copiar para clipboard)
                     document.querySelectorAll('.prize-coupon').forEach(function(el) {
                         el.style.cursor = 'pointer';
                         el.title = 'Clique para copiar';
@@ -602,35 +710,74 @@
                             var couponText = el.textContent.trim();
                             window.parent.postMessage({
                                 type: 'popup:copy-coupon',
+                                popupUuid: popupUuid,
                                 coupon: couponText
                             }, '*');
                         });
                     });
 
-                    window.parent.postMessage({ type: 'popup:loaded' }, '*');
+                    window.parent.postMessage({
+                        type: 'popup:loaded',
+                        popupUuid: popupUuid
+                    }, '*');
                 })();
                 <\/script>
             `;
-        },
+        }
 
-        createIframeContent(templateHtml, popupUuid, storeId, popupType, couponCode = null) {
+        createIframeContent(templateHtml, couponCode) {
             const parser = new DOMParser();
             const doc = parser.parseFromString(templateHtml, 'text/html');
-            const closeBtn = doc.querySelector('.popup-close-btn');
-            if (closeBtn) closeBtn.remove();
+
+            // Remover botões de fechar do template (gerenciados pelo modal externo)
+            doc.querySelectorAll('.popup-close-btn').forEach(btn => btn.remove());
+
+            // CSS injetado no iframe
+            let cssRules = 'html,body{height:100%;margin:0}.bg-image-block{min-height:100%}';
+
+            // Cor de fundo do popup
+            if (this.settings.background_color) {
+                cssRules += `body{background-color:${this.settings.background_color} !important}`;
+            }
+
+            // Imagem de fundo com opacidade
+            if (this.settings.background_image) {
+                const opacity = (this.settings.background_image_opacity != null)
+                    ? parseInt(this.settings.background_image_opacity, 10) / 100
+                    : 1;
+                cssRules += `
+                    body{position:relative}
+                    body::before{
+                        content:'';
+                        position:fixed;
+                        top:0;left:0;right:0;bottom:0;
+                        background-image:url('${this.settings.background_image}');
+                        background-size:cover;
+                        background-position:center;
+                        background-repeat:no-repeat;
+                        opacity:${opacity};
+                        z-index:-1;
+                        pointer-events:none;
+                    }
+                `;
+            }
+
+            const styleEl = document.createElement('style');
+            styleEl.textContent = cssRules;
+            doc.head.appendChild(styleEl);
 
             let processedHtml = doc.documentElement.outerHTML;
 
-            // Substituir [cupom] pelo código real
+            // Substituir [cupom] pelo código real do cupom
             if (couponCode) {
                 processedHtml = processedHtml.replace(/\[cupom\]/gi, couponCode);
             }
 
-            // Wrap em form apenas para tipos que precisam
-            if (popupType !== 'announcement') {
+            // Para formulários (non-announcement): injetar campos hidden
+            if (this.type !== 'announcement') {
                 const hiddenFields = `
-                    <input type="hidden" name="popup_uuid" value="${popupUuid}" />
-                    <input type="hidden" name="store_id" value="${storeId}" />
+                    <input type="hidden" name="popup_uuid" value="${this.uuid}" />
+                    <input type="hidden" name="store_id" value="${STORE_ID}" />
                 `;
 
                 if (processedHtml.includes('<form')) {
@@ -646,7 +793,8 @@
                 }
             }
 
-            const helperScript = this.getIframeHelperScript(popupType);
+            // Injetar script helper no iframe
+            const helperScript = this.getIframeHelperScript();
             if (processedHtml.includes('</body>')) {
                 processedHtml = processedHtml.replace('</body>', `${helperScript}</body>`);
             } else {
@@ -654,19 +802,19 @@
             }
 
             return processedHtml;
-        },
+        }
 
-        async trackView(uuid) {
+        async trackView() {
             try {
                 await fetch(`${API_BASE}/popup-view`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ popup_uuid: uuid })
+                    body: JSON.stringify({ popup_uuid: this.uuid })
                 });
             } catch (e) {
                 console.warn('[Praqt Popup] Erro ao registrar view:', e);
             }
-        },
+        }
 
         validateFormData(data) {
             const errors = [];
@@ -685,17 +833,30 @@
             }
 
             return errors;
-        },
+        }
 
-        async submitForm(data, popupUuid, popupType) {
+        // Remove campos que NÃO devem ser enviados ao backend
+        // O backend determina o prêmio e cupom — frontend não deve enviá-los
+        cleanFormData(data) {
+            const cleaned = { ...data };
+            delete cleaned.popup_uuid;
+            delete cleaned.store_id;
+            delete cleaned.coupon;
+            delete cleaned.prize;
+            return cleaned;
+        }
+
+        async submitForm(data) {
+            const cleanedData = this.cleanFormData(data);
+
             const res = await fetch(`${API_BASE}/popup-submit`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    popup_uuid: popupUuid,
-                    popup_type: popupType,
+                    popup_uuid: this.uuid,
+                    popup_type: this.type,
                     store_id: STORE_ID,
-                    ...data
+                    ...cleanedData
                 })
             });
 
@@ -705,26 +866,25 @@
             }
 
             return await res.json();
-        },
+        }
 
-        updateIframeContent(templateHtml, couponCode = null) {
-            const iframe = document.getElementById('praqt-popup-iframe');
+        updateIframeContent(templateHtml, couponCode) {
+            const iframe = document.getElementById(this.getIframeId());
             if (!iframe) return;
 
-            const { uuid, type } = this.currentConfig;
-            const newContent = this.createIframeContent(templateHtml, uuid, STORE_ID, type, couponCode);
+            const newContent = this.createIframeContent(templateHtml, couponCode);
             iframe.srcdoc = newContent;
-        },
+        }
 
         getIframeDocument() {
-            const iframe = document.getElementById('praqt-popup-iframe');
+            const iframe = document.getElementById(this.getIframeId());
             if (!iframe) return null;
             try {
                 return iframe.contentDocument || iframe.contentWindow.document;
             } catch (e) {
                 return null;
             }
-        },
+        }
 
         close() {
             if (this.rouletteAnimation) {
@@ -738,48 +898,51 @@
                 window.removeEventListener('message', this.messageHandler);
                 this.messageHandler = null;
             }
-            this.currentConfig = null;
+            // Remover estilos específicos deste popup
+            const styleEl = document.getElementById(`praqt-popup-styles-${this.uuid}`);
+            if (styleEl) styleEl.remove();
+
             this.currentCouponCode = null;
-        },
+        }
 
-        async open(config) {
-            const { uuid, type, content, success_content, fail_content, config: settings } = config;
-
-            this.currentConfig = config;
-
-            // Verificações de exibição
-            if (!DisplayManager.checkDeviceVisibility(settings || {})) {
-                console.log('[Praqt Popup] Popup não exibido (dispositivo não permitido)');
+        async open() {
+            // Verificar visibilidade por dispositivo
+            if (!DisplayManager.checkDeviceVisibility(this.settings)) {
+                console.log(`[Praqt Popup ${this.uuid.slice(0, 8)}] Not shown (device not allowed)`);
                 return;
             }
 
-            if (!DisplayManager.shouldShow(`popup_${uuid}_`, settings || {}, type)) {
-                console.log('[Praqt Popup] Popup não exibido (usuário já participou)');
+            // Verificar regras de exibição (login, views, inscrição)
+            if (!DisplayManager.shouldShow(this.uuid, this.settings)) {
                 return;
             }
 
-            if (!content) {
-                console.error('[Praqt Popup] Template não encontrado');
+            if (!this.content) {
+                console.error(`[Praqt Popup ${this.uuid.slice(0, 8)}] Template not found`);
                 return;
             }
 
-            const dimensions = DisplayManager.getPopupDimensions(settings || {});
-            this.injectStyles(settings?.background_color);
+            // Incrementar views no localStorage
+            DisplayManager.incrementViews(this.uuid);
 
-            await this.trackView(uuid);
+            const dimensions = DisplayManager.getPopupDimensions(this.settings);
+            injectGlobalStyles();
+            this.injectStyles();
+
+            await this.trackView();
+
+            const showClose = this.settings.show_close_button !== false;
+            const iframeContent = this.createIframeContent(this.content, null);
 
             const modal = document.createElement('div');
-            modal.id = 'praqt-popup-modal';
-
-            const iframeContent = this.createIframeContent(content, uuid, STORE_ID, type);
-
+            modal.id = this.getModalId();
             modal.innerHTML = `
-                <div id="praqt-popup-container">
-                    <button id="praqt-popup-close" aria-label="Fechar">&times;</button>
+                <div id="${this.getContainerId()}">
+                    ${showClose ? `<button id="${this.getCloseId()}" aria-label="Fechar">&times;</button>` : ''}
                     <iframe
-                        id="praqt-popup-iframe"
-                        srcdoc="${this.escapeHtml(iframeContent)}"
-                        style="width: ${dimensions.width}; height: ${dimensions.height}; min-width: 300px; min-height: 400px; max-width: 90vw; max-height: 85vh;"
+                        id="${this.getIframeId()}"
+                        srcdoc="${Utils.escapeHtml(iframeContent)}"
+                        style="width: ${dimensions.width}; height: ${dimensions.height}; max-width: 90vw; max-height: 85vh;"
                         scrolling="no"
                     ></iframe>
                 </div>
@@ -788,13 +951,23 @@
             document.body.appendChild(modal);
             this.modal = modal;
 
-            modal.querySelector('#praqt-popup-close').onclick = () => this.close();
+            // Botão X externo
+            if (showClose) {
+                const closeBtn = modal.querySelector(`#${this.getCloseId()}`);
+                if (closeBtn) closeBtn.onclick = () => this.close();
+            }
+
+            // Fechar ao clicar no backdrop
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) this.close();
             });
 
+            // Listener de mensagens postMessage do iframe
             this.messageHandler = async (event) => {
                 if (!event.data || typeof event.data !== 'object') return;
+
+                // Filtrar mensagens por UUID
+                if (event.data.popupUuid && event.data.popupUuid !== this.uuid) return;
 
                 const { type: messageType, data, coupon } = event.data;
 
@@ -812,27 +985,25 @@
                         break;
 
                     case 'popup:loaded':
-                        console.log('[Praqt Popup] Iframe carregado');
+                        console.log(`[Praqt Popup ${this.uuid.slice(0, 8)}] Iframe loaded`);
                         break;
                 }
             };
 
             window.addEventListener('message', this.messageHandler);
-        },
+        }
 
         async handleFormSubmit(formData) {
-            const { uuid, type, success_content, fail_content, config: settings } = this.currentConfig;
-
-            // Validar dados
+            // Validar dados do formulário
             const errors = this.validateFormData(formData);
             if (errors.length > 0) {
                 Utils.showErrorModal(errors.join('<br>'));
                 return;
             }
 
-            // Extrair dados visuais da roleta do iframe (apenas id, label, color — sem dados sensíveis)
+            // Extrair dados visuais da roleta do iframe (id, label, color)
             let roulettePrizes = null;
-            if (type === 'roulette') {
+            if (this.type === 'roulette') {
                 try {
                     const iframeDoc = this.getIframeDocument();
                     const rouletteBlock = iframeDoc?.querySelector('[data-prizes]');
@@ -845,92 +1016,90 @@
             }
 
             try {
-                if (type === 'roulette' && roulettePrizes) {
-                    // Para roleta: iniciar animação ANTES de enviar para o backend
-                    const iframe = document.getElementById('praqt-popup-iframe');
-                    const iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
-
-                    if (iframeDoc) {
-                        // Iniciar animação de giro
-                        const animationController = await RouletteEngine.animateRoulette(
-                            iframeDoc,
-                            roulettePrizes,
-                            null, // prize_id ainda não sabemos
-                            () => {} // callback vazio, vamos controlar manualmente
-                        );
-
-                        // Fazer requisição ao backend enquanto gira
-                        const result = await this.submitForm(formData, uuid, type);
-
-                        // Marcar como jogou
-                        DisplayManager.markAsPlayed(`popup_${uuid}_`);
-
-                        // Parar animação e mostrar resultado — usa prize_id do backend
-                        if (animationController && result.prize_id) {
-                            // stopAndFinalize já reordena e anima internamente
-                            animationController.stopAndFinalize(result.prize_id);
-
-                            // Esperar animação terminar e mostrar resultado
-                            setTimeout(() => {
-                                if (result.won && success_content) {
-                                    this.currentCouponCode = result.coupon_code || '';
-                                    this.updateIframeContent(success_content, this.currentCouponCode);
-                                } else if (!result.won && fail_content) {
-                                    this.updateIframeContent(fail_content);
-                                } else {
-                                    this.close();
-                                    Utils.showToast(result.won ? 'Parabéns, você ganhou!' : 'Não foi dessa vez...');
-                                }
-                            }, 2200);
-                        } else {
-                            // Fallback se algo der errado
-                            this.close();
-                            Utils.showToast(result.won ? 'Parabéns!' : 'Não foi dessa vez...');
-                        }
-                    }
-
-                } else if (type === 'default') {
-                    // Popup simples: sempre ganha
-                    const result = await this.submitForm(formData, uuid, type);
-
-                    DisplayManager.markAsPlayed(`popup_${uuid}_`);
-
-                    if (success_content) {
-                        this.currentCouponCode = result.coupon_code || '';
-                        this.updateIframeContent(success_content, this.currentCouponCode);
-                    } else {
-                        this.close();
-                        Utils.showToast('Cadastro realizado com sucesso!');
-                    }
-
+                if (this.type === 'roulette' && roulettePrizes) {
+                    await this.handleRouletteSubmit(formData, roulettePrizes);
+                } else if (this.type === 'default') {
+                    await this.handleDefaultSubmit(formData);
                 } else {
-                    // Announcement ou outro tipo sem form real
+                    // Announcement — fecha sem enviar nada
                     this.close();
                 }
-
-                console.log('[Praqt Popup] Formulário processado com sucesso');
-
             } catch (e) {
                 Utils.showErrorModal(e.message || 'Erro ao processar. Tente novamente.');
             }
-        },
-
-        escapeHtml(html) {
-            return html
-                .replace(/&/g, '&amp;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
         }
-    };
+
+        async handleRouletteSubmit(formData, roulettePrizes) {
+            const iframe = document.getElementById(this.getIframeId());
+            const iframeDoc = iframe?.contentDocument || iframe?.contentWindow?.document;
+
+            if (!iframeDoc) {
+                throw new Error('Iframe não acessível');
+            }
+
+            // Iniciar animação de giro ANTES da chamada ao backend
+            const animationController = await RouletteEngine.animateRoulette(
+                iframeDoc,
+                roulettePrizes,
+                null,
+                () => {}
+            );
+
+            // Submeter ao backend enquanto gira
+            const result = await this.submitForm(formData);
+
+            // Marcar como inscrito no localStorage
+            DisplayManager.markSubscribed(this.uuid);
+
+            // Parar animação e mostrar resultado
+            if (animationController && result.prize_id) {
+                animationController.stopAndFinalize(result.prize_id);
+
+                // Aguardar animação terminar e exibir tela de resultado
+                setTimeout(() => {
+                    if (result.won && this.successContent) {
+                        this.currentCouponCode = result.coupon_code || null;
+                        this.updateIframeContent(this.successContent, this.currentCouponCode);
+                    } else if (!result.won && this.failContent) {
+                        this.updateIframeContent(this.failContent, null);
+                    } else {
+                        this.close();
+                        Utils.showToast(result.won ? 'Parabéns, você ganhou!' : 'Não foi dessa vez...');
+                    }
+                }, 2200);
+            } else {
+                // Fallback se algo der errado com a animação
+                this.close();
+                Utils.showToast(result.won ? 'Parabéns!' : 'Não foi dessa vez...');
+            }
+        }
+
+        async handleDefaultSubmit(formData) {
+            const result = await this.submitForm(formData);
+
+            // Marcar como inscrito no localStorage
+            DisplayManager.markSubscribed(this.uuid);
+
+            if (this.successContent) {
+                this.currentCouponCode = result.coupon_code || null;
+                this.updateIframeContent(this.successContent, this.currentCouponCode);
+            } else {
+                this.close();
+                Utils.showToast('Cadastro realizado com sucesso!');
+            }
+        }
+    }
 
     // ============================================================================
-    // INICIALIZAÇÃO
+    // INICIALIZAÇÃO — REGISTRAR TODOS OS POPUPS ATIVOS
     // ============================================================================
 
-    DisplayManager.setupTriggers(popupConfig.config || {}, () => {
-        PopupRenderer.open(popupConfig);
+    activePopups.forEach(config => {
+        const settings = config.config || {};
+        DisplayManager.setupTriggers(settings, () => {
+            const instance = new PopupInstance(config);
+            instance.open();
+        });
     });
 
 })();
