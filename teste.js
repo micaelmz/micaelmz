@@ -27,7 +27,7 @@
     console.log('[Praqt Popup] Store ID:', STORE_ID, '| Platform:', PLATFORM);
 
     //const API_BASE = 'https://2fgvxez7z8.execute-api.sa-east-1.amazonaws.com/production';
-    const API_BASE = ' https://a5dd-138-186-27-20.ngrok-free.app/local';
+    const API_BASE = 'https://e030-138-186-27-20.ngrok-free.app/local';
 
     let activePopups;
     try {
